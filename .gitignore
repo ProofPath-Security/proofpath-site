@@ -1,0 +1,136 @@
+# ─────────────────────────────────────────────────────────────
+# ProofPath Security – GitHub Pages .gitignore (tight & safe)
+# Keep the public site static (HTML/CSS/JS/images) and prevent
+# accidental commits of secrets, internal docs, evidence, or builds.
+# ─────────────────────────────────────────────────────────────
+
+# 0) ALWAYS keep these if present (GitHub Pages + site)
+!.gitignore
+!index.html
+!resources.html
+!css/
+!css/**/*
+!js/
+!js/**/*
+!assets/
+!assets/**/*
+# If you use a custom domain, KEEP the CNAME file
+!CNAME
+
+# 1) Secrets / credentials / configs (hard block)
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+*.cer
+*.der
+*.jks
+*.keystore
+*.kdb
+*.rdp
+*.ovpn
+
+# env/secret files (any naming pattern)
+.env
+.env.*
+*.env
+*.secret
+secret.*
+secrets.*
+*credentials*
+*token*
+*apikey*
+*api_key*
+*.tfvars
+
+# 2) System/editor noise
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+.Spotlight-V100
+.Trashes
+*.swp
+*.swo
+*.tmp
+*.temp
+*.bak
+*.orig
+*~
+~$*
+# IDEs
+.vscode/
+.idea/
+*.code-workspace
+.project
+.settings/
+*.iml
+
+# 3) Build/output caches (even if not used today)
+node_modules/
+bower_components/
+dist/
+build/
+out/
+.cache/
+.sass-cache/
+coverage/
+*.map
+
+# 4) Archives / large binaries (don’t publish from here)
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+
+# 5) Office & data files (internal collateral belongs elsewhere)
+*.doc
+*.docx
+*.dotx
+*.xlsx
+*.xlsm
+*.xls
+*.csv
+*.tsv
+*.ppt
+*.pptx
+*.vsdx
+*.drawio
+*.numbers
+*.pages
+*.key
+
+# 6) PDFs — block by default, ALLOW ONLY public ones under assets/resources
+#    Put public-facing PDFs (e.g., redacted samples, one-pagers) in assets/resources/.
+*.pdf
+!assets/resources/
+!assets/resources/*.pdf
+
+# 7) Images & media — allow only under assets/ by convention
+#    (If you ever store working images elsewhere, add ignores for those folders.)
+# Examples of working folders to keep private if they exist locally:
+design/
+private_assets/
+evidence/
+proofpack/
+internal/
+
+# 8) Source maps / raw design exports (if any)
+*.psd
+*.ai
+*.sketch
+*.fig
+*.xcf
+
+# 9) Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 10) Optional: keep empty folders with .gitkeep
+# (No ignore rule needed; add .gitkeep files to folders you want tracked.)
