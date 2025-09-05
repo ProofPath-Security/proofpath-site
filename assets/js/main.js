@@ -1,10 +1,7 @@
 
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.getElementById('site-nav');
-  if (!toggle || !nav) return;
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+document.addEventListener('DOMContentLoaded', ()=>{
+  const path = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('header nav a').forEach(a=>{
+    if(a.getAttribute('href') === path){ a.classList.add('active'); }
   });
 });
