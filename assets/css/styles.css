@@ -166,9 +166,35 @@ section{scroll-margin-top:84px}
   .cards-3, .grid-three, .three-cols{grid-template-columns:1fr}
 }
 
+
+/* Constrain the brand image even if no .logo class is present */
+.site-header .brand img{
+  height: 36px !important;
+  max-height: 36px !important;
+  width: auto !important;
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
+/* Keep the brand row compact and aligned */
+.site-header .brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Ensure the header doesn't expand or overlay content */
+.site-header .hdr{
+  min-height: 60px;
+  align-items: center;
+}
+
+
 /* ── Minor typography fixes ───────────────────────────────── */
 h1,h2,h3,h4{color:var(--text);margin:.1rem 0 .6rem}
 h2{font-size:1.6rem}
 h3{font-size:1.2rem}
 p{margin:.6rem 0}
 ul{margin:.2rem 0 .6rem}
+
